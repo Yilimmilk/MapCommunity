@@ -30,7 +30,7 @@ Page({
     wx.getLocation({
       type: 'gcj02', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
       success(res) {
-        //赋值经纬度
+        //设置经纬度
         mainMap.setData({
           latitude: res.latitude,
           longitude: res.longitude
@@ -69,7 +69,7 @@ Page({
             borderWidth: 2,
             borderColor:"#3875FF",
             bgColor: '#ffffff',
-            content: '腾讯总部大楼',
+            content: '测试测试1',
             textAlign: 'center',
             textColor: "#3875FF",
           }
@@ -87,7 +87,7 @@ Page({
               borderWidth: 2,
               borderColor:"#3875FF",
               bgColor: '#ffffff',
-              content: '腾讯总部大楼',
+              content: '测试测试2',
               textAlign: 'center',
               textColor: "#3875FF",
             }
