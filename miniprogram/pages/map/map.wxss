@@ -13,3 +13,8 @@
   padding: 10px;
   bottom: 0;
 }
+.marker-img {
+	vertical-align: middle;
+	width: 34px;
+	height: 34px;
+}

@@ -2,16 +2,24 @@
 <view class="container">
   <view class="map_container">
     <map
-      class="mainMap" id="mmap" 
-      longitude="114.30" latitude="30.60" scale="12"
+      class="mainMap" 
+      id="mmap" 
       latitude="{{latitude}}"
       longitude="{{longitude}}"
+      scale="{{scale}}"
+      covers="{{covers}}"
+      markers='{{markers}}' 
+      controls="{{controls}}" 
+      bindcontroltap="funGetLocation" 
+      show-location="{1}"
+      show-compass="{1}"
     >
+      <!-- 由于cover-view在实体机上测试有问题，暂时使用controls
       <cover-view class="cover-view">
         <cover-view class="button_on_map">
           <cover-image class="get_location_button" src="/images/get_location.png" bindtap="onGetLocation"/>
         </cover-view>
-      </cover-view>
+      </cover-view> -->
     </map>
   </view>
 </view>
