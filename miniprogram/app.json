@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/map/map",
+    "pages/me/me",
+    "pages/userConsole/userConsole"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/map/map",
+        "iconPath": "images/map_tab_default.png",
+        "selectedIconPath": "images/map_tab_selected.png",
+        "text": "地图"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "images/me_tab_default.png",
+        "selectedIconPath": "images/me_tab_selected.png",
+        "text": "我"
+      }
+    ]
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "地图社交Demo",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

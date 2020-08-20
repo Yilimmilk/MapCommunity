@@ -1,0 +1,17 @@
+<!-- map.wxml -->
+<view class="container">
+  <view class="map_container">
+    <map
+      class="mainMap" id="mmap" 
+      longitude="114.30" latitude="30.60" scale="12"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+    >
+      <cover-view class="cover-view">
+        <cover-view class="button_on_map">
+          <cover-image class="get_location_button" src="/images/get_location.png" bindtap="onGetLocation"/>
+        </cover-view>
+      </cover-view>
+    </map>
+  </view>
+</view>
