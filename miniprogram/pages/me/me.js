@@ -3,6 +3,8 @@ const app = getApp()
 
 Page({
   data: {
+    openid: '',
+
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     logged: false,
@@ -11,14 +13,14 @@ Page({
   },
 
   onLoad: function() {
-    if (!wx.cloud) {
-      wx.redirectTo({
-        url: '../chooseLib/chooseLib',
+    //获取用户的openid
+    if (app.globalData.openid) {
+      this.setData({
+        openid: app.globalData.openid
       })
-      return
     }
-
-    // 获取用户信息
+    // 调用云函数获取用户信息
+    this.onGetOpenid(),
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -47,22 +49,21 @@ Page({
   },
 
   onGetOpenid: function() {
-    // 调用云函数
     wx.cloud.callFunction({
       name: 'login',
       data: {},
       success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
         app.globalData.openid = res.result.openid
-        wx.navigateTo({
-          url: '../userConsole/userConsole',
+        this.setData({
+          openid:res.result.openid
         })
       },
-      fail: err => {
-        console.error('[云函数] [login] 调用失败', err)
-        wx.navigateTo({
-          url: '../deployFunctions/deployFunctions',
+      fail:err => {
+        wx.showToast({
+          icon: 'none',
+          title: '获取 openid 失败，请检查是否有部署 login 云函数',
         })
+        console.log('[云函数] [login] 获取 openid 失败，请检查是否有部署云函数，错误信息：', err)
       }
     })
   },

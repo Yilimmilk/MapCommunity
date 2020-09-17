@@ -10,7 +10,7 @@
       covers="{{covers}}"
       markers='{{markers}}' 
       controls="{{controls}}" 
-      bindcontroltap="funGetLocation" 
+      bindcontroltap="funOnControlTap" 
       show-location="{1}"
       show-compass="{1}"
     >
@@ -21,5 +21,18 @@
         </cover-view>
       </cover-view> -->
     </map>
-  </view>
+    <view class = "container" class = "zn-uploadimg" >
+      <button type = "primary" bindtap = "modalinput" > modal有输入框 </button> 
+    </view>
+    <modal 
+      id = "modal" 
+      hidden = "{{hiddenmodalput}}" 
+      title = "留言内容" 
+      confirm - text = "提交" 
+      cancel - text = "取消"
+      bindcancel = "cancel"
+      bindconfirm = "confirm">
+      <input class = "toast-input" bindinput="bindMainTextInput" type = 'text' placeholder = "在这里输入你想要说的话吧：" />
+    </modal>
+    </view>
 </view>
